@@ -24,14 +24,14 @@ public class LoginModel {
     }
 
     public boolean isLogin(String email, String password) throws SQLException {
-        PreparedStatement preparedStatement = null;
+        PreparedStatement employeeTable = null;
         ResultSet resultSet = null;
         String loginSelection = "select * from employee where emailAddress = ? and password = ?";
         try {
-            preparedStatement = connect.prepareStatement(loginSelection);
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
-            resultSet = preparedStatement.executeQuery();
+            employeeTable = connect.prepareStatement(loginSelection);
+            employeeTable.setString(1, email);
+            employeeTable.setString(2, password);
+            resultSet = employeeTable.executeQuery();
             if (resultSet.next()) {
                 return true;
             } else {
@@ -41,7 +41,7 @@ public class LoginModel {
         } catch (Exception e) {
             return false;
         } finally {
-            preparedStatement.close();
+            employeeTable.close();
             resultSet.close();
         }
     }

@@ -43,6 +43,7 @@ public class LoginController implements Initializable {
         if (loginModel.isLogin(auth1, auth2)) {
             App.setRoot("home");
         } else {
+            connectionTest.setStyle("-fx-text-fill: red;");
             connectionTest.setText("Wrong Email or Password!");
         }
     }
@@ -50,6 +51,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         if (loginModel.isDbconn()) {
+            connectionTest.setStyle("-fx-text-fill: green;");
             connectionTest.setText("Connection made!");
         } else {
             connectionTest.setText("Not connected!");
