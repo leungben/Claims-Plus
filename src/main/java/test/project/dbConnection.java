@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class dbConnection {
-    private static final String SQCONN = "jdbc:sqlite:SqliteDb/ClaimsPlus.db";
+    private static final String DATABASE = "jdbc:sqlite:SqliteDb/ClaimsPlus.db";
 
     public static Connection getConnection() {
 
         try {
-            Connection conn = DriverManager.getConnection(SQCONN);
+            Connection conn = DriverManager.getConnection(DATABASE);
             return conn;
         } catch (SQLException e) {
             e.printStackTrace();
