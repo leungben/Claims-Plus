@@ -23,6 +23,56 @@ public class LoginModel {
         }
     }
 
+    public boolean isEmail(String email) throws SQLException {
+        PreparedStatement employeeTable = null;
+        ResultSet resultSet = null;
+        String emailSelection = "SELECT * FROM employee where emailAddress = ?";
+
+        try {
+            employeeTable = connect.prepareStatement(emailSelection);
+            employeeTable.setString(1, email);
+            resultSet = employeeTable.executeQuery();
+
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        } finally {
+            employeeTable.close();
+            resultSet.close();
+        }
+
+    }
+
+    public boolean isPassword(String password) throws SQLException {
+        PreparedStatement employeeTable = null;
+        ResultSet resultSet = null;
+        String passwordSelection = "SELECT * FROM employee where password = ?";
+
+        try {
+            employeeTable = connect.prepareStatement(passwordSelection);
+            employeeTable.setString(1, password);
+            resultSet = employeeTable.executeQuery();
+
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+
+        finally {
+            employeeTable.close();
+            resultSet.close();
+        }
+
+    }
+
     public boolean isLogin(String email, String password) throws SQLException {
         PreparedStatement employeeTable = null;
         ResultSet resultSet = null;

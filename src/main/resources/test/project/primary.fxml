@@ -6,29 +6,46 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="325.0" prefWidth="407.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.project.LoginController">
+
+<HBox alignment="CENTER" prefHeight="685.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.project.LoginController">
    <children>
-      <ImageView fitHeight="200.0" fitWidth="199.0">
-         <image>
-            <Image url="@../../img/logo.png" />
-         </image>
-      </ImageView>
-      <Label text="Log In">
-         <font>
-            <Font size="36.0" />
-         </font></Label>
-      <Label fx:id="connectionTest" text="Label" />
-      <Label text="Username" />
-      <PasswordField fx:id="email" promptText="Email" />
-      <Label text="Password" />
-      <PasswordField fx:id="password" promptText="password" />
-      <Button fx:id="primaryButton" onAction="#Login" prefHeight="25.0" prefWidth="57.0" text="Login" />
-      <Button fx:id="signUp" mnemonicParsing="false" onAction="#signupButton" text="Sign-up" />
+      <VBox alignment="CENTER" prefHeight="685.0" prefWidth="482.0" spacing="20.0">
+         <children>
+            <AnchorPane prefHeight="662.0" prefWidth="481.0">
+               <children>
+                  <Pane prefHeight="645.0" prefWidth="475.0">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="199.0" layoutX="145.0" layoutY="14.0">
+                           <image>
+                              <Image url="@../../img/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="195.0" layoutY="226.0" text="Log In">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="connectionTest" alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="279.0" prefHeight="17.0" prefWidth="208.0" text="Label" />
+                        <PasswordField fx:id="email" layoutX="166.0" layoutY="323.0" promptText="Email" />
+                        <Label layoutX="214.0" layoutY="306.0" text="Username" />
+                        <Label layoutX="219.0" layoutY="355.0" text="Password" />
+                        <PasswordField fx:id="password" layoutX="166.0" layoutY="383.0" promptText="password" />
+                        <Button fx:id="signUp" layoutX="211.0" layoutY="466.0" mnemonicParsing="false" onAction="#signupButton" text="Sign-up" />
+                        <Button fx:id="primaryButton" layoutX="212.0" layoutY="421.0" onAction="#Login" prefHeight="25.0" prefWidth="57.0" text="Login" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</HBox>

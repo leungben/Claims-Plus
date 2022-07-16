@@ -45,6 +45,12 @@
                      </font>
                   </Label>
                   <TextField fx:id="employeeID" layoutX="134.0" layoutY="338.0" prefHeight="32.0" prefWidth="323.0" />
+                  <Label fx:id="errorMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="103.0" prefHeight="17.0" prefWidth="283.0" textFill="#e10b0b" />
+                  <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="98.0" prefHeight="27.0" prefWidth="486.0" text="Enter Employee Data!" textFill="#28ab11">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>

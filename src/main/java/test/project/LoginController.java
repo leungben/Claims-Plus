@@ -8,7 +8,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -44,6 +46,7 @@ public class LoginController implements Initializable {
             App.setRoot("home");
         } else {
             connectionTest.setStyle("-fx-text-fill: red;");
+            connectionTest.setAlignment(Pos.CENTER);
             connectionTest.setText("Wrong Email or Password!");
         }
     }
@@ -52,6 +55,7 @@ public class LoginController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         if (loginModel.isDbconn()) {
             connectionTest.setStyle("-fx-text-fill: green;");
+            connectionTest.setAlignment(Pos.CENTER);
             connectionTest.setText("Connection made!");
         } else {
             connectionTest.setText("Not connected!");
