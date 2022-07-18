@@ -5,12 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * This is the Login Model Class. It handles authentication of Login information
+ */
+
 public class LoginModel {
     Connection connect;
 
     public LoginModel() {
+        // Check if Connection is made with database
         connect = dbConnection.getConnection();
         if (connect == null)
+            // Otherwise do not open Application
             System.exit(1);
     }
 
@@ -22,6 +28,10 @@ public class LoginModel {
             return false;
         }
     }
+
+    /*
+     * The isEmail method checks if email is already in Database
+     */
 
     public boolean isEmail(String email) throws SQLException {
         PreparedStatement employeeTable = null;
@@ -46,6 +56,10 @@ public class LoginModel {
         }
 
     }
+
+    /*
+     * The isPassword method checks if password is already in Database
+     */
 
     public boolean isPassword(String password) throws SQLException {
         PreparedStatement employeeTable = null;
@@ -72,6 +86,10 @@ public class LoginModel {
         }
 
     }
+    /*
+     * The isLogin method checks if an Employee with this email & password is
+     * already within database.
+     */
 
     public boolean isLogin(String email, String password) throws SQLException {
         PreparedStatement employeeTable = null;
