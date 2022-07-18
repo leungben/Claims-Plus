@@ -44,7 +44,7 @@ public class SignUpController {
             prompt.textFillProperty().set(Color.RED);
         } else {
             PreparedStatement insertEmployee = testData.connect.prepareStatement(
-                    "INSERT INTO employee(emailAddress, password, name, employeeID) VALUES (?, ?, ?,?)");
+                    "INSERT INTO employee(emailAddress, password, name, employeeID) VALUES (?, ?, ?, ?)");
             insertEmployee.setString(1, emailAddress.getText());
             insertEmployee.setString(2, password.getText());
             insertEmployee.setString(3, name.getText());

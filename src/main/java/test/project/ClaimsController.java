@@ -64,6 +64,7 @@ public class ClaimsController implements Initializable {
         ObservableList<Claim> claims = tableView.getItems();
         claims.add(claim);
         tableView.setItems(claims);
+
     }
 
     @FXML
